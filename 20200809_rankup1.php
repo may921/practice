@@ -268,3 +268,77 @@
         echo "YES";
     }
 ?>
+
+
+<?php
+    //STEP: 17 インデックス取得
+
+    $input_line = trim(fgets(STDIN));
+    for($a=0;$a<$input_line;$a++){
+        $input = trim(fgets(STDIN));
+        $array[] = $input;
+    }
+    $input = trim(fgets(STDIN));
+    $b = 0;
+    
+    for($a=0;$a<$input_line;$a++){
+        if($array[$a]==$input){
+            $array2[] = $a+1;
+        }
+    }
+    echo $array2[0];
+?>
+
+
+
+<?php
+    // STEP: 18 多重ループ
+
+    $input_line1 = trim(fgets(STDIN));
+    for($a=0;$a<$input_line1;$a++){
+        $input = trim(fgets(STDIN));
+        $array1[] = $input;
+    }
+    
+    $input_line2 = trim(fgets(STDIN));
+    for($a=0;$a<$input_line2;$a++){
+        $input = trim(fgets(STDIN));
+        $array2[] = $input;
+    }
+    
+    for($a=0;$a<$input_line1;$a++){
+        for($b=0;$b<$input_line2;$b++){
+           if(strpos($array2[$b], $array1[$a]) !== false) {
+                echo "YES\n";
+            } else {
+             echo "NO\n";
+            } 
+        }
+    
+    }
+?>
+
+
+
+<?php
+    // forループ
+
+    $input_line = trim(fgets(STDIN));
+    $array1 = explode(" ",$input_line);
+    
+    //人数分繰り返す
+    for($a=0; $a<$array1[0];$a++){
+        $input_line = trim(fgets(STDIN));
+        $array2=explode(" ",$input_line);
+        $num = 0;
+        
+        //紙の数繰り返す
+        for($b=0; $b<$array1[1]; $b++){
+            if($array2[$b]==$array1[2]){
+                $num++;
+            }
+        }
+        echo $num."\n";
+            
+    }
+?>
