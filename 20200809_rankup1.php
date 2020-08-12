@@ -249,3 +249,22 @@
     }
     echo $num;
 ?>
+
+
+<?php
+    // STEP: 16 フラグ管理
+
+    $input_line = trim(fgets(STDIN));
+    $b = 0;
+    for($a=0;$a<$input_line;$a++){
+        $input = trim(fgets(STDIN));
+        if($input==7){
+            $b++;
+        }
+    }
+    if($b==0){
+        echo "NO";
+    }else{
+        echo "YES";
+    }
+?>
